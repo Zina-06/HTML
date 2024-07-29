@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+
+<body>
+    <h2>Formulário em HTML</h2>
+    <form>
+        <label for="fname">Primeiro Nome:</label><br>
+        <input type="text" id="fname" name="fname" value="" placeholder="Primeiro Nome"><br><br>
+
+        <label for="lname">Último nome:</label><br>
+        <input type="text" id="lname" name="lname" value="" placeholder="Último nome"><br><br>
+
+        <label for="idade">Idade:</label><br>
+        <input type="number" id="idade" name="idade" id=""><br><br>
+
+        <label for="telefone">Telefone:</label><br>
+        <input type="number" name="telefone" id="telefone"><br><br>
+
+        <label for="email">E-mail:</label><br>
+        <input type="email" name="email" id="email"><br><br>
+
+        <label for="genero">Gênero:</label><br>
+        <input type="radio" id="masc" name="genero" value="masc">
+       <label for="html">Masculino</label><br>
+       <input type="radio" id="fem" name="genero" value="fem">
+       <label for="css">Feminino</label><br><br>
+
+       <label for="interesses">Interesses:</label><br>
+        <input type="checkbox" name="interesses" id="futebol">
+        <label for="futebol">Futebol</label>
+        <input type="checkbox" name="interesses" id="volei">
+        <label for="volei">Vôlei</label>
+        <input type="checkbox" name="interesses" id="programacao">
+        <label for="programacao">Programação</label><br><br>
+
+        <label for="mensagem">Digite sua mensagem: </label>
+        <input type="text" name="mensagem" id="mensagem"><br><br>
+
+        <input type="button" value="Butão" onclick="mostrarMsg()">
+        
+    </form>
+    <p id="msg">
+        Se clicar no botão "Enviar", os dados serão enviados para uma mensagem de texto do HTML.
+    </p>
+    <script>
+        function mostrarMsg(){
+            let nome = document.getElementById('fname').value;
+            let sobrenome = document.getElementById('lname').value;
+            let idade = document.getElementById('idade').value;
+            let telefone = document.getElementById('telefone').value;
+            let email = document.getElementById('email').value;
+            let genero = document.getElementsByName('genero').value;
+            let interesses = document.getElementByName('interesses').value;
+            let mensagem = document.getElementByName('mensagem').value;
+
+            let texto = `Seja bem-vindo ${nome} ${sobrenome} `;
+            document.getElementById('msg').innerHTML = texto;
+
+        }
+    </script>
+</body>
+
+</html>
